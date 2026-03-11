@@ -1,0 +1,300 @@
+html{
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family:Bric ;
+    src: url(fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf);
+}
+@font-face {
+    font-family:DMsans ;
+    src: url(fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf);
+}
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.present img, .hourly img, .daily img{
+    animation: spin 1.5s linear infinite;
+}
+button{
+    cursor: pointer;
+}
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: DMsans;
+}
+a{
+    text-decoration: none;
+    display: block;
+}
+h1{
+    font-size: 3.5rem;
+    font-family: Bric;
+}
+h3{
+    font-size: 2rem;
+}
+body{
+    background-color: #02012b;
+    padding: 0 15px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+.logo{
+    display: flex;
+}
+.logo img{
+    width: 75%;
+}
+.units{
+    background-color: #25253f;
+    border: 0px ;
+    border-radius: 10px;
+    padding: 10px 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.unit-list{
+    background-color: #25253f;
+    border-radius: 10px;
+    padding: 10px 7px;
+    position: absolute;
+    margin-left: -53px;
+    margin-top: 8px;
+    opacity: 0;
+    z-index: -1;
+    transition: 0.4s all ease;
+    transform: translateY(-15px);
+    box-shadow: 0px 0px 10px rgb(168, 168, 168);
+}
+.unit-list section{
+    border-bottom: 1px solid rgb(82, 81, 81);
+    padding-bottom: 6px;
+}
+.unit-list section:last-child{
+    border: none;
+}
+.unit-list p{
+    font-size: 0.8rem;
+    color: gray;
+    padding: 5px;
+}
+.unit-list button{
+    background-color: transparent;
+    display: block;
+    border: 0px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: left;
+    padding: 10px 5px;
+}
+.unit-list button:hover{
+    background-color: #323244;
+}
+.unit-list.active{
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1;
+}
+.home{
+    display: grid;
+    gap: 20px;
+    padding: 30px 0px;
+}
+.home h1{
+    text-align: center;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    padding: 5px 0px;
+    border-radius: 10px;
+}
+.search{
+    background-color: #25253f;
+    width: 90%;
+    justify-content: left;
+    padding: 10px;
+    gap: 5px;
+    padding-right: 0;
+}
+.search input{
+    background-color:transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s all ease;
+    width: 100%;
+}
+.search input:focus{
+    transform: scale(1.05);
+    outline: none;
+}
+.cityhover{
+    background-color: #25253f;
+    position: absolute;
+    margin-bottom: -80px;
+    width: 80%;
+    margin-left: -8px;
+    padding: 5px;
+    margin-top: 125px;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: -1;
+    opacity: 0;
+    transition: all ease 0.4s;
+    transform: translateY(-50px);
+}
+.cityhover.active{
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+}
+.cityhover section{
+    background-color: #323244;
+    border-radius: 10px;
+    padding: 10px;
+}
+.citysearch{
+    justify-self: center;
+    background-color: #4657d9;
+    padding: 10px 20px;
+    width: 90%;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.locn{
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    padding-right: 10px;
+    border-left: 1px #323244 solid;
+}
+.locn img{
+    width: 1.5rem;
+}
+.present{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.present section{
+    background-color: #25253f;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.present section h2{
+    font-weight: 5  00;
+    font-size: 2.7rem;
+    text-transform: capitalize;
+}
+#P1{
+    grid-column: span 2;
+    background-image: url(images/bg-today-small.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+#P1 h1{
+    font-size: 5rem;
+}
+#P1 article{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
+#P1 img{
+    width: 100px;
+}
+.daily{
+    padding-top: 30px;
+}
+.dailygrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px;
+    padding-top: 20px;
+}
+.dailygrid section{
+    background-color: #25253f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.dailygrid article{
+    display: flex;
+}
+.dailygrid article:last-child{
+    color: #323244;
+}
+.dailygrid article:first-child{
+    text-align: left;
+}
+.dailygrid article:last-child{
+    text-align: right;
+}
+.dailygrid img{
+    width: 100%;
+}
+.hourly{
+    background-color: #25253f;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.hourly div{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+.hourly div select{
+    background-color: #323244;
+    border: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 40%;
+}
+.hourly article{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+.hourly section{
+    background-color: #323244;
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.hourly img{
+    width: 2rem;
+}

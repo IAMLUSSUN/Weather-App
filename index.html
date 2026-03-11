@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <section class="logo"><a>
+                <img src="images/logo.svg" alt="Weather Now" class="logo">
+            </a></section>
+            <section>
+                <button class="units" onclick="units()">
+                    <img src="images/icon-units.svg" alt="units">
+                    <span>Units</span>
+                    <img src="images/icon-dropdown.svg" alt="Dropdown">
+                </button>
+                <div class="unit-list">
+                    <section>
+                        <button>Switch to imperial</button>
+                    </section>
+                    <section class="temp">
+                        <p>Temprature</p>
+                        <button>Celcius(°C)</button>
+                        <button>Fahrenheit(°F)</button>
+                    </section>
+                    <section class="wind-speed">
+                        <p>Wind Speed</p>
+                        <button>Km/hr</button>
+                        <button>mph</button>
+                    </section>
+                    <section class="prep">
+                        <p>Precipitation</p>
+                        <button>Millimeters(mm)</button>
+                        <button>Centimeters(cm)</button>
+                    </section>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <div class="home">
+        <h1>How's the sky looking today?</Thead></h1>
+        <section class="search">
+            <section><img src="images/icon-search.svg" alt="Search"></section>
+            <input type="text" name="place" placeholder="Search for a place..." class="city">
+            <button class="locn" onclick="geolocn()">
+                <img src="images/location-pin-svgrepo-com (1).svg" alt="location">
+            </button>
+        <div class="cityhover">
+            <section>City 1</section>
+            <section>City 2</section>
+            <section>City 3</section>
+        </div>
+        </section>
+        <button onclick="locn()" class="citysearch">
+            Search
+        </button>
+    </div>
+    <div class="present">
+        <section id="P1">
+            <h3 class="city"> -- </h3>
+            <p class="time"> -- </p>
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather" class="current-weather">
+                <h2 class="temp"> -- </h2>
+            </article>
+        </section>
+        <section id="P2">
+            <p>Feels Like</p>
+            <h3> -- </h3>
+        </section>
+        <section id="P3">
+            <p>Humidity</p>
+            <h3> -- </h3>
+        </section>
+        <section id="P4">
+            <p>Wind</p>
+            <h3> -- </h3>
+        </section>
+        <section id="P5">
+            <p>Precipitation</p>
+            <h3> -- </h3>
+        </section>
+    </div>
+    <div class="daily">
+        <h4>Daily Forcast</h4>
+        <div class="dailygrid">
+            <section class="DailyS">
+                <h3> -- </h3>
+                <img src="images/icon-loading.svg" alt="daily1">
+                <article>
+                    <p> -- </p>
+                    <span>/</span>
+                    <p> -- </p>
+                </article>
+            </section>
+            <section class="DailyS">
+                <h3> -- </h3>
+                <img src="images/icon-loading.svg" alt="daily1">
+                <article>
+                    <p> -- </p>
+                    <span>/</span>
+                    <p> -- </p>
+                </article>
+            </section>
+            <section class="DailyS">
+                <h3> -- </h3>
+                <img src="images/icon-loading.svg" alt="daily1">
+                <article>
+                    <p> -- </p>
+                    <span>/</span>                    
+                    <p> -- </p>
+                </article>
+            </section>
+            <section class="DailyS">
+                <h3> -- </h3>
+                <img src="images/icon-loading.svg" alt="daily1">
+                <article>
+                    <p> -- </p>
+                    <span>/</span>
+                    <p> -- </p>
+                </article>
+            </section>
+            <section class="DailyS">
+                <h3> -- </h3>
+                <img src="images/icon-loading.svg" alt="daily1">
+                <article>
+                    <p> -- </p>
+                    <span>/</span>
+                    <p> -- </p>
+                </article>
+            </section>
+            <section class="DailyS">
+                <h3> -- </h3>
+                <img src="images/icon-loading.svg" alt="daily1">
+                <article>
+                    <p> -- </p>
+                    <span>/</span>
+                    <p> -- </p>
+                </article>
+            </section>
+            <section class="DailyS">
+                <h3> -- </h3>
+                <img src="images/icon-loading.svg" alt="daily1">
+                <article>
+                    <p> -- </p>
+                    <span>/</span>
+                    <p> -- </p>
+                </article>
+            </section>
+        </div>
+    </div>
+    <div class="hourly">
+        <div>
+            <h4>Hourly forcast</h4>
+            <select>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+            </select>
+        </div>
+        <section class="hourly1">
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather">
+                <h4>--</h4>
+            </article>
+            <p>--</p>
+        </section>
+        <section class="hourly1">
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather">
+                <h4>--</h4>
+            </article>
+            <p>--</p>
+        </section>
+        <section class="hourly1">
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather">
+                <h4>--</h4>
+            </article>
+            <p>--</p>
+        </section>
+        <section class="hourly1">
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather">
+                <h4>--</h4>
+            </article>
+            <p>--</p>
+        </section>
+        <section class="hourly1">
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather">
+                <h4>--</h4>
+            </article>
+            <p>--</p>
+        </section>
+        <section class="hourly1">
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather">
+                <h4>--</h4>
+            </article>
+            <p>--</p>
+        </section>
+        <section class="hourly1">
+            <article>
+                <img src="images/icon-loading.svg" alt="Weather">
+                <h4>--</h4>
+            </article>
+            <p>--</p>
+        </section>
+    </div>
+</body>
+<script>
+    let city;
+    let lat;
+    let lon;
+    function units(){
+        let unit = document.querySelector("div.unit-list");
+        unit.classList.toggle("active");
+    }
+    document.addEventListener("click", function(event){
+        let unit = document.querySelector("div.unit-list");
+        let button = document.querySelector("button.units");
+        if (!unit.contains(event.target) && !button.contains(event.target)){
+            unit.classList.remove("active")
+        }
+    })
+    document.addEventListener("click", function(event){
+        let hover = document.querySelector(".cityhover");
+        let field = document.querySelector("input.city");
+        if(!hover) return;
+        if(field.contains(event.target)){
+            hover.classList.toggle("active");
+        }
+        else{
+            hover.classList.remove("active");
+        }
+    })
+    document.querySelector("input.city").addEventListener("keydown",function(event){
+        if(event.key === "Enter"){
+            locn();
+            document.querySelector(".cityhover").remove("active");
+        }
+    })
+    function geolocn(){
+        navigator.geolocation.getCurrentPosition(async function(position){
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            let url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`;
+            response = await fetch(url);
+            let data = await response.json();
+            country = data.localityInfo.administrative[0].name;
+            city = data.localityInfo.administrative[2].name;
+            console.log(lat,lon);
+            console.log(country,city);
+            weather();
+        })
+    }
+    async function locn(){
+        city = document.querySelector("input.city").value;
+        let url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=10&language=en&format=json`;
+        let response = await fetch(url);
+        let data = await response.json();
+        lat = data.results[0].latitude;
+        lon = data.results[0].longitude;
+        console.log(lat,lon);
+        weather();
+    }
+    async function weather(){
+        let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,precipitation,weather_code,relative_humidity_2m,apparent_temperature,wind_speed_10m`;
+        let response = await fetch(url);
+        let data = await response.json();
+        let time = await new Date(data.current.time);
+        formatted = time.toLocaleString("en-IN",{
+            weekday:"long",
+            month:"short",
+            day:"numeric",
+            year:"numeric"
+        })
+        let code = data.current.weather_code;
+        let temp = data.current.temperature_2m;
+        let wind = data.current.wind_speed_10m;
+        let prec = data.current.precipitation;
+        let humidity = data.current.relative_humidity_2m;
+        let apptemp = data.current.apparant_temperature;
+        // console.log(temp,wind,prec,humidity,wc,apptemp,formatted);
+        console.log(prec);
+
+        document.querySelector("#P1 h3.city").innerHTML = country+", "+city;
+        document.querySelector("#P1 p.time").innerHTML = formatted;
+        let icon = document.querySelector(".current-weather");
+
+// WEATHER ICONS
+        if(code == 0){
+            icon.src = "images/sunny.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 1 || code == 2){
+            icon.src = "images/par-cloudy.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 3){
+            icon.src = "images/overcast.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 45 || code == 48){
+            icon.src = "images/foggy.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 51 || code == 53 || code == 55){
+            icon.src = "images/drizzle.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 61 || code == 63 || code == 65){
+            icon.src = "images/rain.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 71 || code == 73 || code == 75){
+            icon.src = "images/snow.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 80 || code == 81 || code == 82){
+            icon.src = "images/rain.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 95 || code == 96 || code == 99){
+            icon.src = "images/storm.webp";
+            icon.style.animation = "none";
+        }
+        else{
+            icon.src = "images/overcast.webp";
+            icon.style.animation = "none";
+        }
+// WEATHER ICONS
+        document.querySelector("#P1 h2").innerHTML = temp+"°C";
+
+        if(apptemp == undefined){
+            document.querySelector("#P2 h3").innerHTML = temp+"°C";
+        }
+        else{
+            document.querySelector("#P2 h3").innerHTML = apptemp+"°C";
+        }
+
+        document.querySelector("#P3 h3").innerHTML = humidity+"%";
+        document.querySelector("#P4 h3").innerHTML = wind+" km/hr";
+        document.querySelector("#P5 h3").innerHTML = prec+" mm";
+
+// Daily
+    let day = document.querySelectorAll("section.DailyS");
+     for(i=0;i<7;i++){
+        let date = new Date(data.daily.time[i]);
+        let dayname = date.toLocaleString("en-IN",{
+            weekday:"short"
+        });
+        let code = data.daily.weather_code[i];
+        let maxtemp = data.daily.temperature_2m_max[i];
+        let mintemp = data.daily.temperature_2m_min[i];
+        icon = day[i].querySelector("img");
+        if(code == 0){
+            icon.src = "images/sunny.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 1 || code == 2){
+            icon.src = "images/par-cloudy.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 3){
+            icon.src = "images/overcast.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 45 || code == 48){
+            icon.src = "images/foggy.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 51 || code == 53 || code == 55){
+            icon.src = "images/drizzle.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 61 || code == 63 || code == 65){
+            icon.src = "images/rain.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 71 || code == 73 || code == 75){
+            icon.src = "images/snow.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 80 || code == 81 || code == 82){
+            icon.src = "images/rain.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 95 || code == 96 || code == 99){
+            icon.src = "images/storm.webp";
+            icon.style.animation = "none";
+        }
+        else{
+            icon.src = "images/overcast.webp";
+            icon.style.animation = "none";
+        }
+        day[i].querySelector("h3").innerHTML = dayname;
+        day[i].querySelectorAll("p")[0].innerHTML = maxtemp;
+        day[i].querySelectorAll("p")[1].innerHTML = mintemp;
+     }
+// Hourly   
+     let sec = document.querySelectorAll(".hourly1");
+     for(i=0;i<7;i++){
+        let date = new Date(data.hourly.time[i]);
+        let hour = date.toLocaleString("en-IN",{
+            hour:"numeric"
+        });
+        let code = data.hourly.weather_code[i];
+        let icon = sec[i].querySelector("img");
+        if(code == 0){
+            icon.src = "images/sunny.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 1 || code == 2){
+            icon.src = "images/par-cloudy.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 3){
+            icon.src = "images/overcast.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 45 || code == 48){
+            icon.src = "images/foggy.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 51 || code == 53 || code == 55){
+            icon.src = "images/drizzle.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 61 || code == 63 || code == 65){
+            icon.src = "images/rain.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 71 || code == 73 || code == 75){
+            icon.src = "images/snow.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 80 || code == 81 || code == 82){
+            icon.src = "images/rain.webp";
+            icon.style.animation = "none";
+        }
+        else if(code == 95 || code == 96 || code == 99){
+            icon.src = "images/storm.webp";
+            icon.style.animation = "none";
+        }
+        else{
+            icon.src = "images/overcast.webp";
+            icon.style.animation = "none";
+        }
+        let hrtemp = data.hourly.temperature_2m[i];
+        sec[i].querySelector(".hourly1 h4").innerHTML = hour;
+        sec[i].querySelector(".hourly1 p").innerHTML = hrtemp;
+     }
+    }
+geolocn();
+</script>
+</html>
