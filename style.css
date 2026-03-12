@@ -95,6 +95,9 @@ nav{
     text-align: left;
     padding: 10px 5px;
 }
+.unit-list button:active{
+    background-color: #323244;
+}
 .unit-list button:hover{
     background-color: #323244;
 }
@@ -103,7 +106,7 @@ nav{
     transform: translateY(0);
     z-index: 1;
 }
-.home{
+.hom1{
     display: grid;
     gap: 20px;
     padding: 30px 0px;
@@ -146,7 +149,7 @@ nav{
     width: 80%;
     margin-left: -8px;
     padding: 5px;
-    margin-top: 125px;
+    margin-top: 225px;
     border-radius: 0px 0px 10px 10px;
     border: 1px solid grey;
     display: flex;
@@ -198,6 +201,7 @@ nav{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    border: 1px solid hsl(240, 1%, 25%);
 }
 .present section h2{
     font-weight: 5  00;
@@ -209,6 +213,7 @@ nav{
     background-image: url(images/bg-today-small.svg);
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -219,7 +224,7 @@ nav{
 #P1 h1{
     font-size: 5rem;
 }
-#P1 article{
+#P1 article:last-child{
     display: flex;
     align-items: center;
     gap:2rem;
@@ -243,6 +248,7 @@ nav{
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    border: 1px solid hsl(240, 1%, 25%);
 }
 .dailygrid article{
     display: flex;
@@ -257,7 +263,8 @@ nav{
     text-align: right;
 }
 .dailygrid img{
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 .hourly{
     background-color: #25253f;
@@ -274,13 +281,6 @@ nav{
     padding: 10px 0;
     align-items: center;
 }
-.hourly div select{
-    background-color: #323244;
-    border: 0px;
-    border-radius: 10px;
-    padding: 10px;
-    width: 40%;
-}
 .hourly article{
     display: flex;
     flex-direction: row;
@@ -294,7 +294,73 @@ nav{
     justify-content: space-between;
     padding: 10px;
     align-items: center;
+    border: 1px solid hsl(240, 1%, 25%);
 }
 .hourly img{
     width: 2rem;
+}
+@media (min-width:768px) {
+    body{
+        padding: 20px 100px;
+    }
+    .dailygrid{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media (min-width:1024px) {
+    body{
+        padding:5px 100px;
+    }
+    section.search{
+        width: 70%;
+        display: flex;
+        gap: 30px;
+        padding: 5px 40px;
+        padding-right: 5px;
+    }
+    .hom1{
+        display: flex;
+        justify-content:center;
+        gap: 2rem;
+    }
+    button.citysearch{
+        width: 10%;
+        display: inline;
+    }
+    div.cityhover{
+        width: 60%;
+    }
+    div.A{
+        display: flex;
+        gap: 1rem;
+        align-items:center;
+        justify-content: center;
+    }
+    div.A1{
+        width: 70%;
+    }
+    div.A2{
+        width: 30%;
+    }
+    div.A2 .hourly{
+        height: 100%;
+    }
+    #P1{
+        grid-column: span 4;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 50px 40px;
+    }
+    #P1 h2{
+        font-size: 4rem;
+    }
+    div.present{
+        grid-template-columns: repeat(4,1fr);
+    }
+    .dailygrid{
+        grid-template-columns: repeat(7,1fr);
+    }
+    .DailyS h3{
+        font-size: 1.5rem;
+    }
 }
